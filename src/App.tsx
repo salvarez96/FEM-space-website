@@ -1,10 +1,12 @@
 import './global-styles.scss'
+import Header from './header/header'
 
 function App() {
 
   return (
-    <div>
-    </div>
+    <>
+      <Header />
+    </>
   )
 }
 
