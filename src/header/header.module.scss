@@ -1,6 +1,6 @@
 header {
   position: relative;
-
+  z-index: 1;
 }
 
 input[type='checkbox'] {
@@ -17,11 +17,6 @@ input[type='checkbox'] {
   z-index: 0;
 }
 
-// .hamburger-icon {
-//   color: var(--secondary-clr);
-
-// }
-
 .navigation-container {
   display: flex;
   flex-direction: column;
@@ -31,6 +26,15 @@ input[type='checkbox'] {
   position: absolute;
   z-index: 1;
   right: 0;
+  background-color: rgba(255,255,255,0.04);
+  backdrop-filter: blur(30px);
+
+  transform: translateX(100%);
+  transition: 0.2s ease-in-out transform;
+}
+
+.close-navigation-label {
+  align-self: flex-end;
 }
 
 .close-navigation {
@@ -43,9 +47,25 @@ nav ul {
   justify-content: space-between;
   font-size: 1rem;
   margin-top: 65px;
-  min-height: 140px;
+  min-height: calc(237px - 65px);
+
+  & li {
+    letter-spacing: 2.7px;
+  }
 }
 
 .navigation-item-number {
+  position: relative;
+  top: -1px;
   font-weight: 700;
+}
+
+input[type='checkbox']:checked {
+  & ~ .navigation-container {
+    transform: translateX(0);
+  }
+
+  & ~ .header-icons-container .hamburger-icon {
+    display: none;
+  }
 }

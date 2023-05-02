@@ -37,6 +37,11 @@
   box-sizing: border-box;
 }
 
+body {
+  color: var(--tertiary-clr);
+  background-image: url('/home/background-home-mobile.jpg');
+}
+
 // headings
 h1, h2, h3, h4 {
   font-family: var(--font-headings);
