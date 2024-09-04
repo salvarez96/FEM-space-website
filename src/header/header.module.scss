@@ -14,23 +14,29 @@ input[type='checkbox'] {
   justify-content: space-between;
   align-items: center;
   padding: 24px;
-  z-index: 0;
+  z-index: 99;
+
+  & .hamburger-icon {
+    transform: rotateY(0);
+    transition: transform 0.3s ease-in-out;
+  }
 }
 
 .navigation-container {
   display: flex;
   flex-direction: column;
   padding: 34px 26px 0 32px;
-  width: 254px;
+  width: 60%;
+  max-width: 350px;
   min-height: 100vh;
   position: absolute;
-  z-index: 1;
+  z-index: 999;
   right: 0;
   background-color: rgba(255,255,255,0.04);
   backdrop-filter: blur(30px);
 
-  transform: translateX(100%);
-  transition: 0.2s ease-in-out transform;
+  transform: rotateY(90deg);
+  transition: transform 0.2s ease-in-out;
 }
 
 .close-navigation-label {
@@ -61,11 +67,74 @@ nav ul {
 }
 
 input[type='checkbox']:checked {
-  & ~ .navigation-container {
-    transform: translateX(0);
+  & ~ .navigation-container,
+  & ~ .header-icons-container .hamburger-icon {
+    transform: rotateY(0);
+  }
+}
+
+// tablet dimensions
+@media (min-width: 768px) {
+  label[for='hamburger-menu-toggle'] {
+    display: none;
   }
 
-  & ~ .header-icons-container .hamburger-icon {
-    display: none;
+  .header-icons-container img {
+    margin-left: 10px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .navigation-container {
+    transform: rotateY(0);
+    min-height: calc(96rem / 16);
+    min-width: 450px;
+    padding-top: 18px;
+
+    & nav ul {
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 18px;
+      min-height: inherit;
+      font-size: calc(14rem / 16);
+
+      & .navigation-item-number {
+        display: none;
+      }
+    }
+  }
+}
+
+// desktop dimensions
+@media (min-width: 1440px) {
+  header {
+    margin-top: 35px;
+  }
+
+  .header-icons-container img {
+    margin-left: 40px;
+  }
+
+  .navigation-container {
+    min-width: 830px;
+    align-items: center;
+
+    & nav {
+      min-width: 542px;
+      & ul {
+        font-size: 1rem;
+
+        & .navigation-item-number {
+          font-size: calc(15rem / 16);
+          display: block;
+          margin-right: 0.3rem;
+        }
+
+        & li {
+          display: flex;
+          align-items: flex-end;
+        }
+      }
+    }
   }
 }
