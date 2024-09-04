@@ -40,6 +40,21 @@
 body {
   color: var(--tertiary-clr);
   background-image: url('/home/background-home-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url('/home/background-home-tablet.jpg');
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-image: url('/home/background-home-desktop.jpg');
+  }
 }
 
 // headings
