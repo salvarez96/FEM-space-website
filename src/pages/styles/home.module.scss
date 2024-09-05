@@ -1,0 +1,130 @@
+.home-container {
+  width: 85%;
+  max-width: 445px;
+  margin: 0 auto;
+  padding-top: 16.5vh;
+}
+
+@media (320px <= width < 768px) {
+  .titles-container {
+    h1 {
+      font-size: calc(80rem / 16);
+    }
+
+    h6 {
+      font-size: 1rem;
+    }
+  }
+}
+
+.titles-container {
+  text-transform: uppercase;
+
+  h1, h6 {
+    font-weight: 100;
+  }
+
+  h6 {
+    color: var(--secondary-clr);
+    letter-spacing: 2.7px;
+    margin-bottom: 21px;
+  }
+}
+
+.titles-container, .main-content-container {
+  text-align: center;
+}
+
+.main-content-container {
+  margin-top: 25px;
+  font-size: var(--text-size-mobile);
+  font-family: var(--font-text-regular);
+}
+
+.home-button {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 65px auto 0;
+  border: 0;
+  font-family: var(--font-headings);
+  font-size: calc(20rem / 16);
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  box-shadow: 0;
+  transition: box-shadow 0.4s ease;
+}
+
+.home-button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 calc(150px * 0.39) rgba(11, 13, 23, 0.5);
+}
+
+// tablet dimensions
+@media (min-width: 768px) {
+  .home-container {
+    padding-top: 205px;
+  }
+
+  .main-content-container {
+    margin-top: 10px;
+  }
+
+  .titles-container h6 {
+      font-size: calc(20rem / 16);
+      letter-spacing: 3.38px;
+      margin-bottom: 10px;
+  }
+
+  .home-button {
+    width: 242px;
+    height: 242px;
+    font-size: var(--h4-font-size);
+    margin-top: 155px;
+  }
+
+  .home-button:hover {
+    box-shadow: 0 0 0 calc(242px * 0.39) rgba(11, 13, 23, 0.5);
+  }
+}
+
+// desktop dimensions
+@media (min-width: 1440px) {
+  .parent-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-top: 305px;
+    gap: 60px;
+  }
+
+  .home-container {
+    padding: 0;
+  }
+
+  .titles-container h6 {
+    font-size: var(--h5-font-size);
+    letter-spacing: 4.72px;
+    margin-bottom: 20px;
+  }
+
+  .titles-container, .main-content-container {
+    text-align: start;
+  }
+
+  .main-content-container {
+    margin-top: 25px;
+  }
+
+
+  .home-button {
+    width: 274px;
+    height: 274px;
+    margin-top: 155px;
+  }
+
+  .home-button:hover {
+    box-shadow: 0 0 0 calc(274px * 0.39) rgba(11, 13, 23, 0.5);
+  }
+}
