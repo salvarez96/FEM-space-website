@@ -1,4 +1,4 @@
-import styles from './header.module.scss'
+import styles from '@styles/header/header.module.scss'
 import { navigationItems } from './navigation-items'
 
 export default function Header() {

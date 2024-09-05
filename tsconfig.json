@@ -18,7 +18,8 @@
     "baseUrl": "./",
     "paths": {
       "@pages/*": ["src/pages/*"],
-      "@styles/*": ["src/pages/styles/*"],
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"],
       "@copies": ["src/copies/copies.json"]
     }
   },

@@ -1,5 +1,5 @@
-import './global-styles.scss'
-import Header from './header/header'
+import '@styles/global-styles.scss'
+import Header from '@components/header/header'
 import Home from '@pages/home'
 
 function App() {

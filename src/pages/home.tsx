@@ -1,5 +1,5 @@
 import { homeCopies } from '@copies'
-import styles from '@styles/home.module.scss'
+import styles from '@styles/pages/home.module.scss'
 
 export default function Home() {
   return (
