@@ -13,6 +13,13 @@
   font-style: regular;
 }
 
+@font-face {
+  font-family: 'Barlow';
+  src: url('../fonts/barlow/Barlow-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: regular;
+}
+
 // variables
 :root {
   --primary-clr: #0b0d17;
@@ -20,6 +27,7 @@
   --tertiary-clr: #fff;
   --font-headings: 'Bellefair', 'sans-serif';
   --font-text: 'Barlow-condensed', 'sans-serif';
+  --font-text-regular:'Barlow', 'sans-serif';
   --h1-font-size: calc(150rem / 16);
   --h2-font-size: calc(100rem / 16);
   --h3-font-size: calc(56rem / 16);
@@ -28,7 +36,9 @@
   --sub-heading-one: calc(28rem / 16);
   --sub-heading-two: calc(14rem / 16);
   --nav-text-size: calc(16rem / 16);
-  --text-size: calc(18rem / 16);
+  --text-size-mobile: calc(15rem / 16);
+  --text-size-tablet: calc(16rem / 16);
+  --text-size-desktop: calc(18rem / 16);
 }
 
 * {
@@ -43,17 +53,27 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   body {
     background-image: url('/home/background-home-tablet.jpg');
   }
+
+  .main-text-container p {
+    font-size: var(--text-size-tablet);
+  }
 }
 
 @media (min-width: 1440px) {
   body {
     background-image: url('/home/background-home-desktop.jpg');
+  }
+
+  .main-text-container p {
+    font-size: var(--text-size-desktop);
   }
 }
 
@@ -73,6 +93,9 @@ h3 {
 h4 {
   font-size: var(--h4-font-size);
 }
+h6 {
+  font-family: var(--font-text);
+}
 h5 {
   font-family: var(--font-text);
   font-size: var(--h5-font-size);
@@ -84,10 +107,17 @@ nav {
 }
 
 p {
-  font-family: var(--font-text);
-  font-size: var(--text-size);
+  font-family: var(--font-text-regular);
+  font-size: var(--text-size-mobile);
+  color: var(--secondary-clr);
 }
 
 li {
   list-style: none;
+}
+
+.main-text-container {
+  color: var(--secondary-clr);
+  font-weight: 100;
+  line-height: 1.8;
 }
