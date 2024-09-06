@@ -2,7 +2,7 @@
   width: 85%;
   max-width: 445px;
   margin: 0 auto;
-  padding-top: 16.5vh;
+  margin-top: 2.2vh;
 }
 
 @media (320px <= width < 768px) {
@@ -42,18 +42,25 @@
 }
 
 .home-button {
-  display: block;
+  display: grid;
+  place-content: center;
   width: 150px;
   height: 150px;
   border-radius: 50%;
   margin: 65px auto 0;
+  padding-bottom: 0;
   border: 0;
-  font-family: var(--font-headings);
-  font-size: calc(20rem / 16);
-  letter-spacing: 1.25px;
-  text-transform: uppercase;
+  background-color: var(--tertiary-clr);
   box-shadow: 0;
   transition: box-shadow 0.4s ease;
+  font-size: calc(20rem / 16);
+
+  & span {
+    font-family: var(--font-headings);
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    color: var(--primary-clr);
+  }
 }
 
 .home-button:hover {
@@ -64,7 +71,7 @@
 // tablet dimensions
 @media (min-width: 768px) {
   .home-container {
-    padding-top: 205px;
+    margin-top: 110px;
   }
 
   .main-content-container {
@@ -95,9 +102,14 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    padding-top: 305px;
     gap: 60px;
+    margin-top: 145px;
   }
+
+  .main-content-container {
+    margin-top: 0;
+  }
+
 
   .home-container {
     padding: 0;
@@ -112,11 +124,6 @@
   .titles-container, .main-content-container {
     text-align: start;
   }
-
-  .main-content-container {
-    margin-top: 25px;
-  }
-
 
   .home-button {
     width: 274px;

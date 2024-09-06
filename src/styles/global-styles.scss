@@ -49,6 +49,7 @@
 
 body {
   color: var(--tertiary-clr);
+  background-color: var(--primary-clr);
   background-image: url('/home/background-home-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -114,6 +115,11 @@ p {
 
 li {
   list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .main-text-container {
