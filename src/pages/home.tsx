@@ -1,5 +1,6 @@
 import { homeCopies } from '@copies'
 import styles from '@styles/pages/home.module.scss'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
           <p>{ homeCopies['main-content'] }</p>
         </section>
       </div>
-      <button className={ styles['home-button'] } type="button">Explore</button>
+      <Link to='/destination' className={ styles['home-button'] } type="button"><span>Explore</span></Link>
     </div>
   )
 }
