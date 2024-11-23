@@ -138,6 +138,7 @@ input[type='checkbox']:checked {
 // desktop dimensions
 @media (min-width: 1440px) {
   header {
+    position: relative;
     display: flex;
     margin-top: 35px;
   }
@@ -154,10 +155,12 @@ input[type='checkbox']:checked {
   .header-desktop-decoration {
     position: absolute;
     left: 12%;
-    min-width: 32.848vw;
+    width: 32.848vw;
+    max-width: 800px;
     height: 1px;
     z-index: 9999;
     align-self: center;
+    opacity: 0.25;
     background-color: #fff;
   }
 
