@@ -1,0 +1,142 @@
+body {
+  background-image: url('/destination/background-destination-mobile.jpg');
+}
+
+.destination-subheading {
+  font-size: 1rem;
+  font-weight: 100;
+  text-align: center;
+  letter-spacing: 2.7px;
+
+  span {
+    margin-right: 22px;
+    opacity: 0.25;
+  }
+}
+
+.destination-navigation {
+  width: calc((237.5 * 100%) / 375);
+  max-width: 285px;
+  text-align: center;
+  margin: 0 auto;
+  max-height: calc(28rem / 16);
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+
+    li {
+      text-transform: uppercase;
+      color: var(--secondary-clr);
+    }
+  }
+} 
+
+.destination-main-container {
+  width: 87%;
+  margin-top: 30px;
+  margin: 30px auto 30px;
+}
+
+.destination-heading {
+  text-align: center;
+  font-size: calc(56rem / 16);
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  margin-bottom: 10px;
+}
+
+.destination-image {
+  display: block;
+  max-width: calc((170 * 100%) / 375);
+  min-height: 170px;
+  margin: 30px auto;
+}
+
+.main-content {
+  text-align: center;
+  line-height: 2;
+  margin: 0 auto 40px;
+}
+
+.decorator {
+  height: 1px;
+  margin: 0 auto;
+  background-color: #383b4b;
+}
+
+.additional-facts-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+
+  .additional-facts {
+    display: flex;
+    margin-bottom: 40px;    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    .additional-facts-title {
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-size: var(--sub-heading-two);
+      font-family: var(--font-text);
+      letter-spacing: 2.36px;
+      color: var(--secondary-clr);
+    }
+  
+    .additional-facts-fact {
+      text-transform: uppercase;
+      font-size: var(--sub-heading-one);
+      font-family: var(--font-headings);
+      color: white;
+    }
+  }
+}
+
+// tablet dimensions
+@media (min-width: 768px) {
+  body {
+    background-image: url('/destination/background-destination-tablet.jpg');
+  }
+
+  .destination-subheading {
+    margin-top: 50px;
+    margin-left: 34px;
+    text-align: start;
+    font-size: calc(20rem / 16);
+  }
+
+  .destination-image {
+    width: 300px;
+    min-height: 300px;
+    margin: 60px auto;
+  }
+
+  .destination-heading {
+    font-size: calc(80rem / 16);
+  }
+
+  .destination-main-container {
+    width: calc((573 * 100%) / 768);
+  }
+
+  .main-content {
+    font-size: 1rem;
+  }
+
+  .additional-facts-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+// desktop dimensions
+@media (min-width: 1440px) {
+  body {
+    background-image: url('/destination/background-destination-desktop.jpg');
+  }
+}
