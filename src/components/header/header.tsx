@@ -65,7 +65,7 @@ export default function Header() {
                 <Link to={navItem.navLink} title={navItem.navTitle.toLowerCase()}>
                   <span className={ styles['navigation-item-number']}>{navItem.groupNumber }</span> {navItem.navTitle}
                 </Link>
-                <div className={ styles[`navigation-item__${currentLocation === navItem.navLink ? 'active' : 'hover'}`] }></div>
+                <div className={ styles[`navigation-item__${currentLocation.includes(navItem.navLink) ? 'active' : 'hover'}`] }></div>
               </li>
             )) }
           </ul>
