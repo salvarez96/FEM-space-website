@@ -2,6 +2,7 @@ import { destinationCopies } from '@copies'
 import styles from '@styles/pages/destination.module.scss'
 import { useEffect, useState } from 'react'
 import { NavLink, useLocation, useParams } from 'react-router-dom'
+import { transformToUrlString, checkCurrentUrl } from '@helpers'
 
 export default function Destination() {
 
@@ -11,16 +12,12 @@ export default function Destination() {
 
   useEffect(() => {
     destinationCopies.find(destination => {
-      if (destination.heading.toLowerCase() === destinationName) {
+      if (transformToUrlString(destination.heading) === destinationName) {
         setDestinationToRender(destination)
         return true
       }
     })
   }, [destinationName])
-
-  function checkCurrentLocation(destination: typeof destinationToRender, index: number) {
-    return currentLocation.includes(destination.heading.toLowerCase()) || (currentLocation === '/destination' && !index)
-  }
 
   return (
     <div className={styles['destination-page-container']}>
@@ -31,10 +28,13 @@ export default function Destination() {
       <section className={styles['destination-main-container']}>
         <nav className={styles['destination-navigation']}>
           <ul>
-            {destinationCopies.map((destination, index) => (
-              <li key={destination.heading}>
-                <NavLink className={ checkCurrentLocation(destination, index) ? styles['navigation-link__active'] : '' } to={'/destination/' + destination.heading.toLowerCase()}>{destination.heading}</NavLink>
-                <div className={ styles[`navigation-item__${checkCurrentLocation(destination, index) ? 'active' : 'hover'}`] }></div>
+            {destinationCopies.map(({ heading }, index) => (
+              <li key={heading}>
+                <NavLink
+                  className={ checkCurrentUrl(heading, index, currentLocation, '/destination') ? styles['navigation-link__active'] : '' }
+                  to={'/destination/' + transformToUrlString(heading)}
+                >{heading}</NavLink>
+                <div className={ styles[`navigation-item__${checkCurrentUrl(heading, index, currentLocation, '/destination') ? 'active' : 'hover'}`] }></div>
               </li>
             ))}
           </ul>
