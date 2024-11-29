@@ -50,7 +50,7 @@
 body {
   color: var(--tertiary-clr);
   background-color: var(--primary-clr);
-  background-image: url('/home/background-home-mobile.jpg');
+  background-image: url('/images/home/background-home-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -60,7 +60,7 @@ body {
 
 @media (min-width: 768px) {
   body {
-    background-image: url('/home/background-home-tablet.jpg');
+    background-image: url('/images/home/background-home-tablet.jpg');
   }
 
   .main-text-container p {
@@ -70,7 +70,7 @@ body {
 
 @media (min-width: 1440px) {
   body {
-    background-image: url('/home/background-home-desktop.jpg');
+    background-image: url('/images/home/background-home-desktop.jpg');
   }
 
   .main-text-container p {
