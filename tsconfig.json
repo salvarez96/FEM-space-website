@@ -20,7 +20,8 @@
       "@pages/*": ["src/pages/*"],
       "@components/*": ["src/components/*"],
       "@styles/*": ["src/styles/*"],
-      "@copies": ["src/copies/copies.json"]
+      "@copies": ["src/copies/copies.json"],
+      "@helpers": ["src/helpers.tsx"],
     }
   },
   "include": ["src"],
