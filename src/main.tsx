@@ -5,6 +5,7 @@ import Home from '@pages/home'
 import Destination from '@pages/destination'
 import Crew from '@pages/crew'
 import Technology from '@pages/technology'
+import Error from '@pages/error'
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -14,11 +15,11 @@ import {
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<App />}>
+    <Route path='/' element={<App />} errorElement={<Error />}>
       <Route path='home' element={<Home />} />
-      <Route path='destination' element={<Destination />} />
-      <Route path='crew' element={<Crew />} />
-      <Route path='technology' element={<Technology />} />
+      <Route path='destination/:destinationName?' element={<Destination />} />
+      <Route path='crew/:crewMember?' element={<Crew />} />
+      <Route path='technology/:terminology?' element={<Technology />} />
     </Route>
   )
 )
