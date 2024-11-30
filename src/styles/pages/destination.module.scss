@@ -170,12 +170,12 @@ body {
 
   .destination-page-container {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(11, 1fr);
     margin-top: 80px;
   }
 
   .destination-complimentary-container {
-    grid-column: 2/7;
+    grid-column: 2/6;
   }
 
   .destination-image, .destination-navigation, .destination-main-container {
@@ -183,7 +183,7 @@ body {
   }
 
   .destination-main-container {
-    grid-column: 9/12;
+    grid-column: 8/11;
     margin-top: 85px;
   }
 
@@ -201,6 +201,8 @@ body {
 
   .destination-subheading {
     margin-top: 0;
+    margin-left: calc((170 * 100%) / 1440);
+    font-size: calc(28rem / 16);
   }
 
   .destination-image {
@@ -208,14 +210,6 @@ body {
     min-height: 445px;
     margin-top: 90px;
     margin-left: calc((280 * 100%) / 1440);
-  }
-
-  .destination-subheading {
-    margin-left: calc((170 * 100%) / 1440);
-  }
-  
-  .destination-subheading {
-    font-size: calc(28rem / 16);
   }
 
   .destination-main-container {
