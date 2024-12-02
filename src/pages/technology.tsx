@@ -18,6 +18,8 @@ export default function Technology() {
         return true
       }
     })
+
+    if (!terminology) setTerminologyToRender(technologyCopies[0])
   }, [terminology])
 
   // handle content rendering depending on window dimensions
@@ -30,10 +32,8 @@ export default function Technology() {
   return (
     <div className={styles['technology-page-container']}>
       <>
-        <section className={styles['technology-complimentary-container']}>
-          <h5 className={styles['technology-subheading']}><span>03</span>SPACE LAUNCH 101</h5>
-          <img className={ styles['technology-image'] } src={terminologyToRender.images['mobile']} alt={terminologyToRender.term + ' image'} />
-        </section>
+        <h5 className={styles['technology-subheading']}><span>03</span>SPACE LAUNCH 101</h5>
+        <img className={ styles['technology-image'] } src={terminologyToRender.images[isDesktopWidth ? 'desktop' : 'mobile']} alt={terminologyToRender.term + ' image'} />
         <section className={styles['technology-main-container']}>
           <nav className={styles['technology-navigation']}>
             <ul>
@@ -48,9 +48,11 @@ export default function Technology() {
               ))}
             </ul>
           </nav>
-          <p className={styles['technology-terminology-subheading']}>THE TERMINOLOGY...</p>
-          <h2 className={styles['technology-heading']}>{terminologyToRender.term}</h2>
-          <p className={styles['main-content']}>{terminologyToRender['main-content']}</p>
+          <article className={styles['technology-content-container']}>
+            <p className={styles['technology-terminology-subheading']}>THE TERMINOLOGY...</p>
+            <h2 className={styles['technology-heading']}>{terminologyToRender.term}</h2>
+            <p className={styles['main-content']}>{terminologyToRender['main-content']}</p>
+          </article>
         </section>
       </>
   </div>)
