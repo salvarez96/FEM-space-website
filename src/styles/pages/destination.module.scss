@@ -1,4 +1,4 @@
-body {
+body:has(.destination-page-container) {
   background-image: url('/images/destination/background-destination-mobile.jpg');
 }
 
@@ -123,7 +123,7 @@ body {
 
 // tablet dimensions
 @media (min-width: 768px) {
-  body {
+  body:has(.destination-page-container) {
     background-image: url('/images/destination/background-destination-tablet.jpg');
   }
 
@@ -164,7 +164,7 @@ body {
 
 // desktop dimensions
 @media (min-width: 1440px) {
-  body {
+  body:has(.destination-page-container) {
     background-image: url('/images/destination/background-destination-desktop.jpg');
   }
 

@@ -1,4 +1,4 @@
-body {
+body:has(.crew-page-container) {
   background-image: url('/images/crew/background-crew-mobile.jpg');
 }
 
@@ -88,7 +88,7 @@ body {
 
 // tablet dimensions
 @media (min-width: 768px) {
-  body {
+  body:has(.crew-page-container) {
     background-image: url('/images/crew/background-crew-tablet.jpg');
   }
 
@@ -124,7 +124,7 @@ body {
 
 // desktop dimensions
 @media (min-width: 1440px) {
-  body {
+  body:has(.crew-page-container) {
     background-image: url('/images/crew/background-crew-desktop.jpg');
   }
 
