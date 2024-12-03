@@ -1,31 +1,18 @@
-import { crewCopies } from '@copies'
 import styles from '@styles/pages/crew.module.scss'
-import { useEffect, useState } from 'react'
 import { NavLink, useLocation, useParams } from 'react-router-dom'
 import { transformToUrlString, checkCurrentUrl } from '@helpers'
+import { useWindowWidth } from '@hooks/useWindowWidth'
+import { useCopyToRender } from '@hooks/useCopyToRender'
 
 export default function Crew() {
 
   let { crewMember } = useParams()
   const currentLocation = useLocation().pathname
-  const [ crewMemberToRender, setCrewMemberToRender ] = useState(crewCopies[0])
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-
-  useEffect(() => {
-    crewCopies.find(member => {
-      if (transformToUrlString(member.name) === crewMember) {
-        setCrewMemberToRender(member)
-        return true
-      }
-    })
-  }, [crewMember])
+  const [ crewMemberToRender, crewCopies ] = useCopyToRender('crewCopies', crewMember)
+  const windowWidth = useWindowWidth()
 
   // handle content rendering depending on window dimensions
   let isMobileWidth = windowWidth < 768 ? true : false
-
-  window.addEventListener('resize', () => {
-    setWindowWidth(window.innerWidth)
-  });
 
   return (
     <div className={styles['crew-page-container']}>
@@ -53,7 +40,7 @@ export default function Crew() {
           </nav>
           <h4 className={styles['crew-position']}>{crewMemberToRender.position}</h4>
           <h2 className={styles['crew-heading']}>{crewMemberToRender.name}</h2>
-          <p className={styles['main-content']}>{crewMemberToRender['main-content']}</p>
+          <p className={styles['main-content']}>{crewMemberToRender['mainContent']}</p>
         </section>
       </>
       : // desktop content
@@ -64,7 +51,7 @@ export default function Crew() {
         <section className={styles['crew-main-container']}>
           <h4 className={styles['crew-position']}>{crewMemberToRender.position}</h4>
           <h2 className={styles['crew-heading']}>{crewMemberToRender.name}</h2>
-          <p className={styles['main-content']}>{crewMemberToRender['main-content']}</p>
+          <p className={styles['main-content']}>{crewMemberToRender['mainContent']}</p>
           <nav className={styles['crew-navigation']}>
             <ul>
               {crewCopies.map(({ name }, index) => (

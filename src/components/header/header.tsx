@@ -2,12 +2,13 @@ import styles from '@styles/header/header.module.scss'
 import { navigationItems } from './navigation-items'
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
+import { useWindowWidth } from '@hooks/useWindowWidth'
 
 export default function Header() {
 
   const currentLocation = useLocation().pathname
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   const hamburgerMenuToggle: React.MutableRefObject<HTMLInputElement | null> = useRef(null)
+  const windowWidth = useWindowWidth()
 
   useEffect(() => {
     if (hamburgerMenuToggle.current && hamburgerMenuToggle.current.checked) {
@@ -18,9 +19,6 @@ export default function Header() {
   // handle specific tag rendering depending on window dimensions
   let isTabletWidth = windowWidth >= 768 ? true : false
   let isDesktopWidth = windowWidth >= 1440 ? true : false
-  window.addEventListener('resize', () => {
-    setWindowWidth(window.innerWidth)
-  });
 
   return (
     <header>
