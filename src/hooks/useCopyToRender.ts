@@ -2,13 +2,17 @@ import { useEffect, useState } from "react"
 import copies from '@copies'
 import { transformToUrlString } from "@helpers"
 
+// create object type from all properties of copies.json
 type Copies = typeof copies
+// use keys of copies.json as literal types
 type CopiesKeys = keyof Copies
-type ValidCopies = Exclude<CopiesKeys, 'homeCopies'>
+// exclude "homeCopies" which won't be used in useCopyToRender
+type CopyType = Exclude<CopiesKeys, 'homeCopies'>
 
 interface Copy {
   "name": string,
   "mainContent": string,
+  "position"?: string
   "image"?: string,
   "additionalFacts"?: {
     "averageDistance"?: string,
@@ -21,22 +25,24 @@ interface Copy {
 }
 
 export function useCopyToRender(
-  copyToRender: ValidCopies,
+  copyType: CopyType,
   urlPathname: string | undefined,
-): [Copy, Copies[ValidCopies]] {
+): [Copy, Copies[CopyType]] {
 
-  const [copiesToRender, setCopiesToRender] = useState(copies[copyToRender][0])
+  const [copyToRender, setCopiesToRender] = useState(copies[copyType][0])
 
   useEffect(() => {
-    copies[copyToRender].find(copy => {
-      if (transformToUrlString(copy.name).includes(urlPathname as string)) {
-        setCopiesToRender(copy)
-        return true
-      }
-    })
-
-    if (!urlPathname) setCopiesToRender(copies[copyToRender][0])
+    if (urlPathname) {
+      copies[copyType].find(copy => {
+        if (transformToUrlString(copy.name).includes(urlPathname)) {
+          setCopiesToRender(copy)
+          return true
+        }
+      })
+    } else {
+      setCopiesToRender(copies[copyType][0])
+    }
   }, [urlPathname])
 
-  return [copiesToRender, copies[copyToRender]]
+  return [copyToRender, copies[copyType]]
 }
