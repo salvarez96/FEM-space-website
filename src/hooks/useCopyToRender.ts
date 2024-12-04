@@ -29,11 +29,12 @@ export function useCopyToRender(
   urlPathname: string | undefined,
 ): [Copy, Copies[CopyType]] {
 
-  const [copyToRender, setCopiesToRender] = useState(copies[copyType][0])
+  const [copyToRender, setCopiesToRender] = useState(copies[copyType][0] as Copy)
+  const getCopiesToRender: Copy[] = copies[copyType]
 
   useEffect(() => {
     if (urlPathname) {
-      copies[copyType].find(copy => {
+      getCopiesToRender.find((copy: Copy) => {
         if (transformToUrlString(copy.name).includes(urlPathname)) {
           setCopiesToRender(copy)
           return true
