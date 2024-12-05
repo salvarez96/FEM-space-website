@@ -15,7 +15,7 @@ export default function Crew() {
   let isMobileWidth = windowWidth < 768 ? true : false
 
   return (
-    <div className={styles['crew-page-container']}>
+    <main className={styles['crew-page-container']}>
       {isMobileWidth ?
       // mobile content
       <>
@@ -69,5 +69,5 @@ export default function Crew() {
         <img className={ styles['crew-image'] } src={crewMemberToRender.image} alt={crewMemberToRender.name + ' image'} />
       </> 
     }
-  </div>)
+  </main>)
 }

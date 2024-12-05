@@ -10,7 +10,7 @@ export default function Destination() {
   const [ destinationToRender, destinationCopies ] = useCopyToRender('destinationCopies', destinationName)
 
   return (
-    <div className={styles['destination-page-container']}>
+    <main className={styles['destination-page-container']}>
       <section className={styles['destination-complimentary-container']}>
         <h5 className={styles['destination-subheading']}><span>01</span>PICK YOUR DESTINATION</h5>
         <img className={ styles['destination-image'] } src={destinationToRender.image} alt={destinationToRender.name + ' image'} />
@@ -43,6 +43,6 @@ export default function Destination() {
           </div>
         </article>
       </section>
-    </div>
+    </main>
   )
 }

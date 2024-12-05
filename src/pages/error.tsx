@@ -7,7 +7,7 @@ export default function Error() {
   console.error(error)
 
   return (
-    <div id="error-page" className={ styles["error-page"] }>
+    <main id="error-page" className={ styles["error-page"] }>
       <h1>Oops!</h1>
       <h3>Code { error.status }</h3>
       <h5>Sorry, an unexpected error has occurred.</h5>
@@ -18,6 +18,6 @@ export default function Error() {
         <i>{ error.data }</i>
       </p>
       <Link to='/'>Return to home</Link>
-    </div>
+    </main>
   )
 }

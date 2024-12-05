@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
-    <div className={ styles['parent-container'] }>
+    <main className={ styles['parent-container'] }>
       <div className={ styles['home-container'] }>
         <section className={ styles['titles-container'] }>
           <h6>{ homeCopies['subtitle'] }</h6>
@@ -14,7 +14,7 @@ export default function Home() {
           <p>{ homeCopies['mainContent'] }</p>
         </section>
       </div>
-      <Link to='/destination' className={ styles['home-button'] } type="button"><span>Explore</span></Link>
-    </div>
+      <Link to='/destination' className={ styles['home-button'] }><span>Explore</span></Link>
+    </main>
   )
 }
